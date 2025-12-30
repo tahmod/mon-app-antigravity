@@ -7,7 +7,7 @@ import uvicorn
 import os
 
 # --- Configuration ---
-MODEL_PATH = r'd:\SupNum\Formation IA GIZ\Loan Approval\models\model.pkl'
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models', 'model.pkl')
 
 # --- App Initialization ---
 app = FastAPI(title="Loan Approval API", description="API pour l'évaluation des demandes de crédit")
