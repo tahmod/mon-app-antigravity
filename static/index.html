@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banque du Futur - Évaluation Crédit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Évaluation de Demande de Prêt</h1>
+            <p>Système d'aide à la décision par Intelligence Artificielle</p>
+        </header>
+
+        <main>
+            <form id="loanForm">
+                <div class="form-grid">
+                    <!-- Informations Personnelles -->
+                    <div class="section-title">Informations Client</div>
+
+                    <div class="form-group">
+                        <label>Âge</label>
+                        <input type="number" name="person_age" required min="18" max="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Genre</label>
+                        <select name="person_gender" required>
+                            <option value="male">Homme</option>
+                            <option value="female">Femme</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Éducation</label>
+                        <select name="person_education" required>
+                            <option value="High School">Lycée</option>
+                            <option value="Associate">DEUG/BTS</option>
+                            <option value="Bachelor">Licence</option>
+                            <option value="Master">Master</option>
+                            <option value="Doctorate">Doctorat</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Revenu Annuel (€)</label>
+                        <input type="number" name="person_income" required min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Expérience Pro. (Années)</label>
+                        <input type="number" name="person_emp_exp" required min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Propriété</label>
+                        <select name="person_home_ownership" required>
+                            <option value="RENT">Locataire</option>
+                            <option value="MORTGAGE">Hypothèque</option>
+                            <option value="OWN">Propriétaire</option>
+                            <option value="OTHER">Autre</option>
+                        </select>
+                    </div>
+
+                    <!-- Informations Prêt -->
+                    <div class="section-title">Détails du Prêt</div>
+
+                    <div class="form-group">
+                        <label>Montant du Prêt (€)</label>
+                        <input type="number" name="loan_amnt" required min="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Motif</label>
+                        <select name="loan_intent" required>
+                            <option value="PERSONAL">Personnel</option>
+                            <option value="EDUCATION">Éducation</option>
+                            <option value="MEDICAL">Médical</option>
+                            <option value="VENTURE">Entreprise</option>
+                            <option value="HOMEIMPROVEMENT">Travaux</option>
+                            <option value="DEBTCONSOLIDATION">Dettes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Taux d'Intérêt (%)</label>
+                        <input type="number" name="loan_int_rate" required step="0.1" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ratio Prêt/Revenu (0-1)</label>
+                        <input type="number" name="loan_percent_income" required step="0.01" min="0" max="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Historique Crédit (Années)</label>
+                        <input type="number" name="cb_person_cred_hist_length" required min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Score Crédit</label>
+                        <input type="number" name="credit_score" required min="300" max="850">
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" name="previous_loan_defaults_on_file">
+                            Défaut de paiement précédent ?
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit">Analyser la Demande</button>
+            </form>
+
+            <div id="result" class="hidden">
+                <h2>Résultat de l'Analyse</h2>
+                <div id="decisionBox" class="decision-box">
+                    <span id="decisionText">--</span>
+                </div>
+                <div class="details">
+                    <p>Probabilité d'approbation : <strong id="probability">--</strong></p>
+                    <p>Raison : <span id="reason">--</span></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

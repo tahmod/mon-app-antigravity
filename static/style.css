@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #2563eb;
+    --background-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.section-title {
+    grid-column: 1 / -1;
+    font-weight: 700;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e5e7eb;
+    color: var(--primary-color);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    grid-column: 1 / -1;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    width: auto;
+}
+
+button {
+    grid-column: 1 / -1;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 2px solid #e5e7eb;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.decision-box {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.approved {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 2px solid var(--success);
+}
+
+.rejected {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 2px solid var(--danger);
+}
